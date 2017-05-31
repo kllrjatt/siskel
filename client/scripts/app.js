@@ -5,7 +5,11 @@ var Movie = Backbone.Model.extend({
   },
 
   toggleLike: function () {
-    // your code here
+    // use this.set to set the new value 
+    // toggle changes the current value of like to the opposite 
+    // use this.get to get the value of like 
+    // use ! to reverse the value 
+    this.set('like', !this.get('like'));
   }
 
 });
