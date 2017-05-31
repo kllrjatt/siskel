@@ -19,7 +19,11 @@ var Movies = Backbone.Collection.extend({
   model: Movie,
 
   initialize: function () {
-    // your code here
+    // list to event change 
+    // when there is a change on like 
+    // use collection sort from backbone 
+    // pass in context to what you want to change 
+    this.on('change:like', this.sort, this);
   },
 
   comparator: 'title',
