@@ -4,7 +4,7 @@ var Movie = Backbone.Model.extend({
     like: true
   },
 
-  toggleLike: function() {
+  toggleLike: function () {
     // your code here
   }
 
@@ -14,13 +14,13 @@ var Movies = Backbone.Collection.extend({
 
   model: Movie,
 
-  initialize: function() {
+  initialize: function () {
     // your code here
   },
 
   comparator: 'title',
 
-  sortByField: function(field) {
+  sortByField: function (field) {
     // your code here
   }
 
@@ -32,12 +32,12 @@ var AppView = Backbone.View.extend({
     'click form input': 'handleClick'
   },
 
-  handleClick: function(e) {
+  handleClick: function (e) {
     var field = $(e.target).val();
     this.collection.sortByField(field);
   },
 
-  render: function() {
+  render: function () {
     new MoviesView({
       el: this.$('#movies'),
       collection: this.collection
@@ -57,7 +57,7 @@ var MovieView = Backbone.View.extend({
                           <div class="rating">Fan rating: <%- rating %> of 10</div> \
                         </div>'),
 
-  initialize: function() {
+  initialize: function () {
     // your code here
   },
 
@@ -65,11 +65,11 @@ var MovieView = Backbone.View.extend({
     'click button': 'handleClick'
   },
 
-  handleClick: function() {
+  handleClick: function () {
     // your code here
   },
 
-  render: function() {
+  render: function () {
     this.$el.html(this.template(this.model.attributes));
     return this.$el;
   }
@@ -78,17 +78,17 @@ var MovieView = Backbone.View.extend({
 
 var MoviesView = Backbone.View.extend({
 
-  initialize: function() {
+  initialize: function () {
     // your code here
   },
 
-  render: function() {
+  render: function () {
     this.$el.empty();
     this.collection.forEach(this.renderMovie, this);
   },
 
-  renderMovie: function(movie) {
-    var movieView = new MovieView({model: movie});
+  renderMovie: function (movie) {
+    var movieView = new MovieView({ model: movie });
     this.$el.append(movieView.render());
   }
 

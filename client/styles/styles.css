@@ -23,10 +23,10 @@ h1 {
 }
 
 #main h1 span {
-    font-style:italic;
+    font-style: italic;
 }
 
-    form {
+form {
     width: 280px;
     margin: auto;
     margin-bottom: 20px;
